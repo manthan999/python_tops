@@ -6,6 +6,8 @@ print(""" hello
       word
       1234""")
 
+print("hel\b'lo")
+
 print("hello\\\'word")
 
 print("python","java","cpp","css",sep=" | ")
