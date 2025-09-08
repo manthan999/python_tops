@@ -42,44 +42,48 @@ Ans:
 -> 1994 ::
         - Python 1.0 released.
 
-        -Added features like:
+        - Added features like:
                 Lambda functions
                 Map, filter, redce
 
 -> 2000 ::
+        - Python 2.0 released.
 
-Python 2.0 released.
+        - Introduced important features:
+                List comprehensions
+                Garbage collection using reference counting and cycle-detecting garbage collector
 
-Introduced important features:
+    However, Python 2.x and 3.x were not fully compatible, which created a “split” in the community.
 
-List comprehensions
+-> 2008 ::
+        - Python 3.0 released (major redesign).
 
-Garbage collection using reference counting and cycle-detecting garbage collector
+        - Improvements included:
+                Clearer syntax
+                Better Unicode support
+                More consistency in standard libraries
+                Not backward compatible with Python 2.
 
-However, Python 2.x and 3.x were not fully compatible, which created a “split” in the community.
+-> 2020 ::
+        - End of Life (EOL) for Python 2.x (official support stopped).
+        - Developers are encouraged to use Python 3.
 
-2008:
+-> 2023 & Beyond ::
+        - Current stable version is Python 3.x (with frequent updates).
+        - Focus on performance, typing hints, pattern matching, and modern features.
 
-Python 3.0 released (major redesign).
+--------------- Evolution Timeline ---------------
 
-Improvements included:
+-> 1989: Idea conceived by Guido van Rossum
 
-Clearer syntax
+-> 1991: Python 0.9.0 released
 
-Better Unicode support
+-> 1994: Python 1.0
 
-More consistency in standard libraries
+-> 2000: Python 2.0
 
-Not backward compatible with Python 2.
+-> 2008: Python 3.0
 
-2020:
+-> 2020: End of Python 2 support
 
-End of Life (EOL) for Python 2.x (official support stopped).
-
-Developers are encouraged to use Python 3.
-
-2023 & Beyond:
-
-Current stable version is Python 3.x (with frequent updates).
-
-Focus on performance, typing hints, pattern matching, and modern features.
+-> Now: Python 3.x (actively maintained and improved)
