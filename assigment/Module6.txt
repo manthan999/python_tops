@@ -1,0 +1,88 @@
+Que 1. Introduction to Python and its Features (simple, high-level, interpreted language).
+Ans:
+
+
+------------ Introduction to Python ------------
+
+-> Python is a high-level, interpreted, and general-purpose programming language created by Guido van Rossum in 1991.
+-> It is widely used for web development, data science, artificial intelligence, machine learning, automation, and more.
+-> Python is popular because it is easy to learn, simple to write, and powerful in functionality.
+
+------------ key Features of Python ------------
+
+I.Simple & Easy to Learn
+-> Python syntax is very close to English.
+-> Beginners can learn it quickly compared to other programming languages.
+
+II.High-Level Language
+-> Programmers don’t need to worry about low-level details like memory management.
+
+III.Interpreted Language
+-> Python code runs line by line using an interpreter.
+-> No need for separate compilation.
+
+Qua 2. History and evolution of Python.
+Ans:
+--------------- History of ---------------
+
+-> 1980s (Late) ::
+        - Guido van Rossum, a Dutch programmer at CWI (Centrum Wiskunde & Informatica) in the Netherlands, started developing Python.
+        - He wanted a language that was simple like ABC language, but more powerful and extensible.
+        - The idea was to create a language that is easy to read, learn, and use.
+
+-> 1991::
+        - Python’s first version (0.9.0) was released.
+       
+        - It already included features like: 
+                Functions
+                Exception handling
+                Core data types (str, list, dict, etc.)
+                Modules
+
+1994:
+
+Python 1.0 released.
+
+Added features like:
+
+Lambda functions
+
+Map, filter, reduce
+
+2000:
+
+Python 2.0 released.
+
+Introduced important features:
+
+List comprehensions
+
+Garbage collection using reference counting and cycle-detecting garbage collector
+
+However, Python 2.x and 3.x were not fully compatible, which created a “split” in the community.
+
+2008:
+
+Python 3.0 released (major redesign).
+
+Improvements included:
+
+Clearer syntax
+
+Better Unicode support
+
+More consistency in standard libraries
+
+Not backward compatible with Python 2.
+
+2020:
+
+End of Life (EOL) for Python 2.x (official support stopped).
+
+Developers are encouraged to use Python 3.
+
+2023 & Beyond:
+
+Current stable version is Python 3.x (with frequent updates).
+
+Focus on performance, typing hints, pattern matching, and modern features.
