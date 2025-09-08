@@ -30,7 +30,7 @@ Ans:
         - He wanted a language that was simple like ABC language, but more powerful and extensible.
         - The idea was to create a language that is easy to read, learn, and use.
 
--> 1991::
+-> 1991 ::
         - Python’s first version (0.9.0) was released.
        
         - It already included features like: 
@@ -39,17 +39,14 @@ Ans:
                 Core data types (str, list, dict, etc.)
                 Modules
 
-1994:
+-> 1994 ::
+        - Python 1.0 released.
 
-Python 1.0 released.
+        -Added features like:
+                Lambda functions
+                Map, filter, redce
 
-Added features like:
-
-Lambda functions
-
-Map, filter, reduce
-
-2000:
+-> 2000 ::
 
 Python 2.0 released.
 
