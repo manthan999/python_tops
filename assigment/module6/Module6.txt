@@ -1,3 +1,7 @@
+
+                                        1. Introduction to Python
+
+
 Que 1. Introduction to Python and its Features (simple, high-level, interpreted language).
 Ans :
 
@@ -230,3 +234,8 @@ Code :
 ----------------------
 |   print("Hello")   |
 ----------------------
+
+                                        2. Programming Style
+
+Qua 1. Understanding Python’s PEP 8 guidelines.
+Ans :
