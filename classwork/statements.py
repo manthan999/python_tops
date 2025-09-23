@@ -1,6 +1,6 @@
-#conditonal  : if-else
-#looping  :for, while
-#control : break, continue, pass
+# conditonal  : if-else
+# looping  :for, while
+# control : break, continue, pass
 
 
 # age = 17
