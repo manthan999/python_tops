@@ -7,7 +7,7 @@
 # if age>=18:
 #     print("elegeble...")
 # else:
-#     # print("not elegeble")
+#     print("not elegeble")
 #     pass
 
 # a  =1000
