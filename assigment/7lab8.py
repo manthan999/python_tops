@@ -1,2 +1,2 @@
-s="helloworld"
+s="efguiaewrgbn"
 print(s[::-1])
