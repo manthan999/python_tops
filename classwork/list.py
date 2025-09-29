@@ -40,7 +40,7 @@
 #     i+=1
 
 
-x = ['Python','Java',"Java",'Node','Php',"Android","Oracle"]
+# x = ['Python','Java',"Java",'Node','Php',"Android","Oracle"]
 
 # y = []
 
@@ -61,5 +61,5 @@ x = ['Python','Java',"Java",'Node','Php',"Android","Oracle"]
 # y = x
 # print(y)
 
-print(x.count("Java"))
-print(x.index("Java"))
+# print(x.count("Java"))
+# print(x.index("Java"))
