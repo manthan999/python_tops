@@ -13,7 +13,7 @@
 # print(l[2:8:2])
 # print(l[::-1])
 
-# x = ['Python','Java','Node','Php',"Android","Oracle"]
+x = ['Python','Java','Node','Php',"Android","Oracle"]
 # y  =['a','b']
 # x[1] = "SQL"
 # x.insert(1,'SQL')
@@ -22,15 +22,15 @@
 
 # x[2:5] = ["a","b","c","d"]
 # x.extend(y)
-# x.remove("Python")
+# x.remove("Node")
 # x.pop(1)
 # x.clear()
 # # del x
 # print(x)
 
 
-# for i in x:
-#     print(i)
+for i in x:
+    print(i)
 
 # for i in range(len(x)):
 #     print(x[i])
