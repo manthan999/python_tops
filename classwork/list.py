@@ -18,6 +18,7 @@
 # x[1] = "SQL"
 # x.insert(1,'SQL')
 # x.append("10000")
+# print(x)
 
 # x[2:5] = ["a","b","c","d"]
 # x.extend(y)
