@@ -1,3 +1,3 @@
 tuple = (10,20,30,40,50,60,70,80,90,)
 
-print(tuple[1:6])
+print/(tuple*2)
