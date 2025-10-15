@@ -1,0 +1,50 @@
+[
+  {
+    "name": "United States",
+    "isoCode": "US",
+    "states": [
+      {
+        "name": "California",
+        "isoCode": "CA",
+        "cities": [
+          "Los Angeles",
+          "San Francisco",
+          "San Diego"
+        ]
+      },
+      {
+        "name": "New York",
+        "isoCode": "NY",
+        "cities": [
+          "New York City",
+          "Buffalo",
+          "Rochester"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Canada",
+    "isoCode": "CA",
+    "states": [
+      {
+        "name": "Ontario",
+        "isoCode": "ON",
+        "cities": [
+          "Toronto",
+          "Ottawa",
+          "Mississauga"
+        ]
+      },
+      {
+        "name": "Quebec",
+        "isoCode": "QC",
+        "cities": [
+          "Montreal",
+          "Quebec City",
+          "Laval"
+        ]
+      }
+    ]
+  }
+]
