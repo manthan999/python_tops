@@ -181,3 +181,6 @@ window.bind("<Down>", lambda e: change_direction("down"))
 next_turn(snake, food)
 
 window.mainloop()
+
+
+
