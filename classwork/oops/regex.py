@@ -1,11 +1,11 @@
-import re
+# import re
 
 # k = re.match("a","aheallo")
 # k = re.search("al","healloa")
 # k = re.findall("a","aheallo")
 # k = re.finditer("a","ahealloa")
 # for i in k:
-#     print(i)
+    # print(i)
 
 # k = re.sub("a",'X',"aheallo")
 # print(k)
@@ -36,10 +36,10 @@ import re
 # else:
 #     print("valid name")
 
-email = "tops@gmail.com"
+# email = "tops@gmail.com"
 
-k = re.match("^[a-z0-9A-Z-_]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$",email)
-if k is None:
-    print("Invalid email")
-else:
-    print("Valid email")
+# k = re.match("^[a-z0-9A-Z-_]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}$",email)
+# if k is None:
+#     print("Invalid email")
+# else:
+#     print("Valid email")
