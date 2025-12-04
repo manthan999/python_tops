@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(218, 218, 230, 1) 9%, rgba(190, 217, 233, 1) 15%, rgba(0, 212, 255, 1) 83%);
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    background-color: black;
+
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 80%;
+    height: 100%;
+    float: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive
+}
+
+.main {
+    width: 100%;
+    height: 70%;
+
+}
+
+footer {
+    width: 100%;
+    height: 15%;
+
+}
