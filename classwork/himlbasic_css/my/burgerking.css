@@ -54,4 +54,23 @@ span.txt {
     font-weight: 700;
 
 }
+table {
+
+    margin-top: 20px;
+    margin-inline: auto;
+
+}
+
+table,td,th {
+
+    border: 1px solid black;
+    font-style: italic;
+}
+
+td,th,table {
+
+    border-collapse: collapse;
+    padding: 10px;
+
+}
 
