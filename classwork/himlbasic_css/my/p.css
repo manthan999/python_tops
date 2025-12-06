@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+
+    width: 100%;
+    height: 100vh;
+
+}
+
+.header{
+    width:100%;
+    height:20%;
+    
+}
+
+.logo{
+      width:10%;
+      height:10%;
+      display:flex;
+      float:left;
+      font-size:4vh;
+}
+
+.MY{
+    width:40%;
+    height: 40%;
+    display: flex;
+    float: right;
+    font-size:3vh;
+    word-spacing: 12%;
+}
+
