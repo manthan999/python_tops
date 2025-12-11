@@ -1,0 +1,28 @@
+Create vnenv : 
+py -m venv myenv
+
+Start Env : 
+myenv/scripts/activate
+
+install django : 
+pip install django
+
+create project: 
+py -m django startproject myproject .
+
+run project : 
+py manage.py runserver
+
+create app : 
+py manage.py startapp myapp
+
+Register app in settings.py in project : 
+INSTALLED_APPS = [
+    ''
+]
+
+----
+project - >url.py [include]
+
+----
+app - urls.py [import view - > create view] 
