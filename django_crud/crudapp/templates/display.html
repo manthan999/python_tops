@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table border="1" align="center" cellspacing="10" cellpadding="10">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Age</th>
+        <th colspan="2">Action</th>
+      </tr>
+      {%for st in students%}
+      <tr>
+        <td>{{st.id}}</td>
+        <td>{{st.name}}</td>
+        <td>{{st.email}}</td>
+        <td>{{st.phone}}</td>
+        <td>{{st.age}}</td>
+        <td><a href="{%url 'delete'%}?did={{st.id}}">Delete</a></td>
+        <td><a href="{%url 'update'%}?uid={{st.id}}">Update</a></td>
+      </tr>
+      {%endfor%}
+    </table>
+    <a href="{%url 'index'%}">Back to register</a>
+  </body>
+</html>

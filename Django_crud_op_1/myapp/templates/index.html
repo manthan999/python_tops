@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {{msg}}
+    {{done}}
+    <form action="{%url 'register'%}" method="post">
+        {%csrf_token%}
+        <input type="hidden" name="id" value="{{p.id}}">
+        <input type="text" name="name" placeholder="Enter name" value="{{p.name}}">
+        <input type="text" name="weight" placeholder="Enter weight" value="{{p.weight}}">
+        <input type="text" name="price" placeholder="Enter price" value="{{p.price}}">
+        <input type="submit">
+        <input type="reset">
+        <a href="{%url 'display'%}">Display data</a>
+    </form>
+
+
+</body>
+
+</html>
