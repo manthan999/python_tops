@@ -94,6 +94,7 @@
             <thead>
                 <tr>
                     <th>Image</th>
+                    <th>ID</th>
                     <th>Department</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -106,9 +107,10 @@
                 {% for e in employees %}
                 <tr>
                     <td>
-                        <img src="{{p.image.url}}" alt="product">
+                        <img src="{{e.image.url}}" width="50px" height="50px" alt="product">
                     </td>
-                    <td>{{ e.department.name }}</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{ e.department }}</td>
                     <td>{{ e.name }}</td>
                     <td>{{ e.email }}</td>
                     <td>₹ {{ e.salary }}</td>
@@ -118,7 +120,7 @@
                 <tr>
                     <td colspan="4" class="empty">No employees found</td>
                 </tr>
-                {% end if %}
+                {% endif %}
             </tbody>
         </table>
 

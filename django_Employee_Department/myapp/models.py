@@ -5,11 +5,11 @@ from django.db import models
 class Department(models.Model):
     name = models.CharField(max_length=50)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 class Employee(models.Model):
-    Department = models.ForeignKey(Department,on_delete=models.CASCADE,null=True)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     salary = models.IntegerField()

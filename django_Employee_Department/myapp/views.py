@@ -3,30 +3,30 @@ from myapp.models import *
 # Create your views here.
 
 def index(request):
-    Departments = Department.objects.all()
-
-    return render(request,"index.html",{"Departments":Departments})
+    department = Department.objects.all()
+    return render(request,"index.html",{"departments":department})
 
 def register(request):
     if request.method=='POST':
         data = request.POST
-        Department= data.get("Department")
+        department= data.get("department")
+        id = data.get('id')
         name = data.get("name")
         email= data.get("email")
         salary= data.get("salary")
         file = request.FILES['file']
 
-        Product.objects.create(
-            Department= Department.objects.get(pk=Department),
-            name = name,
-            email=email,
-            salary=salary,
-            image = file
-        )
-        
-        return redirect("index")
+        if not id:
+
+            Employee.objects.create(
+                department= Department.objects.get(pk=Department),
+                name = name,
+                email=email,
+                salary=salary,
+                image = file
+                )
+    return render(request,'index.html')
 
 def display(request):
-    Employeeloyee = Employee.objects.all()
-    return render(request,'display.html',{"Employee":Employee})
-    
+    employees = Employee.objects.all()
+    return render(request,'display.html',{"employees":employees})
