@@ -1,32 +1,35 @@
-from django.shortcuts import render,redirect
-from myapp.models import *
-# Create your views here.
+from django.shortcuts import render, redirect
+from myapp.models import Department, Employee
 
 def index(request):
-    department = Department.objects.all()
-    return render(request,"index.html",{"departments":department})
+    departments = Department.objects.all()
+    return render(request, "index.html", {"departments": departments})
+
 
 def register(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         data = request.POST
-        department= data.get("department")
-        id = data.get('id')
+
+        department_id = data.get("department")
         name = data.get("name")
-        email= data.get("email")
-        salary= data.get("salary")
-        file = request.FILES['file']
+        email = data.get("email")
+        salary = data.get("salary")
+        image = request.FILES.get("image")
 
-        if not id:
+        department = Department.objects.get(id=department_id)
 
-            Employee.objects.create(
-                department= Department.objects.get(pk=Department),
-                name = name,
-                email=email,
-                salary=salary,
-                image = file
-                )
-    return render(request,'index.html')
+        Employee.objects.create(
+            department=department,
+            name=name,
+            email=email,
+            salary=salary,
+            image=image,
+        )
+
+    return redirect("display")  
+
+
 
 def display(request):
     employees = Employee.objects.all()
-    return render(request,'display.html',{"employees":employees})
+    return render(request, "display.html", {"employees": employees})
