@@ -102,7 +102,7 @@
                 {% for p in products %}
                 <tr>
                     <td>
-                        <img src="{{p.image.url}}" alt="product">
+                        <img src="{{p.image.url}}" alt="{{p.image.url}}">
                     </td>
                     <td>{{ p.category.name }}</td>
                     <td>{{ p.name }}</td>
@@ -110,7 +110,6 @@
                     <td>{{ p.qty }}</td>
                     <td><a href="{%url 'delete'%}?id={{p.id}}">Delete</a></td>
                     <td><a href="{%url 'edit'%}?id={{p.id}}">Update</a></td>
-
                 </tr>
                 {% endfor %}
                 {% else %}
@@ -120,7 +119,7 @@
                 {% endif %}
             </tbody>
         </table>
-            <a href="{%url 'index'%}">Back to register</a>
+        <a href="{%url 'index'%}">Back to register</a>
     </div>
 
 </body>
