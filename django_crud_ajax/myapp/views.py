@@ -39,6 +39,8 @@ def updatestudent(request):
         email = request.POST['email']
         phone = request.POST['phone']
 
+
+
         students = student.objects.get(pk=id)
         students.name = name 
         students.email = email
@@ -46,3 +48,6 @@ def updatestudent(request):
         students.save()
 
         return HttpResponse("student updated !!!")
+    
+
+
