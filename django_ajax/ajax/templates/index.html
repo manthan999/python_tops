@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+                countries()
+        })
+
+        function get() {
+
+            var data = $("#data").val()
+            $.get(
+                'register',
+                { data },
+                function (rt) {
+
+                    var list = "<ul>"
+                    rt.products.map(ele => {
+                        list += `<li>${ele.name}</li>`
+                    })
+                    list += '<ul>'
+
+                    $("#tdata").html(list)
+                }
+            )
+        }
+
+        function countries()
+        {
+            $.get("countries",{},function(rt){
+                option = "<option value='0'>---- select country ----</option>"
+                rt.countries.map(ele =>{
+                    option += `<option value=${ele.id}>${ele.name}</option>`
+                })
+                $("#country").html(option)
+            })
+        }
+
+        function states(cid)
+        {
+            $.get("states", {cid}, function (rt) {
+                option = "<option value='0'>---- select state ----</option>"
+                rt.states.map(ele => {
+                    option += `<option value=${ele.id}>${ele.name}</option>`
+                })
+                $("#state").html(option)
+            })
+        }
+
+        function cities(sid) {
+                $.get("cities", {sid}, function (rt) {
+                    option = "<option value='0'>---- select city ----</option>"
+                    rt.cities.map(ele => {
+                        option += `<option value=${ele.id}>${ele.name}</option>`
+                    })
+                    $("#city").html(option)
+                })
+            }
+    </script>
+
+</head>
+
+<body>
+
+    <label>
+    <input type="text" id="data" onkeyup="get()">
+    <button onclick="get()">submit</button>
+    <div id="tdata"></div>
+    </label>
+
+    <hr/>
+    <br/>
+    <label for="">Country</label>
+    <select name="country" id="country" onchange="states(value)">
+    </select>
+    <label for="">State</label>
+    <select name="state" id="state" onchange="cities(value)">
+        <option value="0">---- select state ----</option>
+    </select>
+    <label for="">city</label>
+    <select name="city" id="city">
+        <option value="0">---- select city ----</option>
+    </select>
+
+</body>
+
+</html>
