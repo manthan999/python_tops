@@ -10,5 +10,5 @@ urlpatterns =[
     path("students",students,name="students"),
     path("add-students",add_students,name="add_students"),
     path("update-students/<id>",update_students,name="update_students"),
-    path("deletre-students/<id>",delete_students,name="delete_students"),
+    path("delete-students/<id>",delete_students,name="delete_students"),
 ]
