@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from rest_framework.decorators import APIView,api_view
+from rest_framework.decorators import APIView,api_view,permission_classes
 from rest_framework.response import Response
 from crudapp.models import *
 from crudapp.serializer import *
+from rest_framework.permissions import AllowAny,IsAdminUser,IsAuthenticated
+from crudapp.permissions import IsSupereUser
 # Create your views here.
 
 class AuthorAPI(APIView):
+    
+    permission_classes=[IsSupereUser]
 
     def get(self,request):
         author = Author.objects.all()   
@@ -42,6 +46,7 @@ class AuthorUpdateAPI(APIView):
             return Response({"data":ser.data})
         
 @api_view(['POST'])
+@permission_classes([IsSupereUser])
 def addbook(request,id):
     data = request.data
     data.update({"author":id})
@@ -57,3 +62,27 @@ def viewbook(request):
     books = Book.objects.all()
     ser = Bookserializer(books,many=True)
     return Response({"data":ser.data})
+
+class BookById(APIView):
+
+    def get(self,request,id):
+        books = Book.objects.get(pk=id)
+        ser = Bookserializer(books)
+        return Response({"data":ser.data})
+    
+    def delete(self,request,id):
+        books = Book.objects.get(pk=id)
+        books.delete()
+        return Response({"message":"delete"})   
+
+@api_view(['PUT'])
+def updatebook(request,id,bid):
+    data = request.data
+    data.update({"author":id})
+    cdata = Book.objects.get(pk=bid)
+    ser = Bookserializer(cdata,data)
+    if not ser.is_valid():
+            return Response({"errors":ser.errors})
+    else:
+            ser.save()
+            return Response({"data":ser.data})
