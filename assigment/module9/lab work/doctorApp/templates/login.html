@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block h1 %}
+    <h1>Login</h1>
+{% endblock h1 %}
+
+
+{% block main %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="card p-4 shadow gap-2">
+                {% csrf_token %}
+                <input type="text" id="userName" class="form-control" placeholder="User Name">
+                <input type="text" id="userPassword" class="form-control" placeholder="Password">
+                <button type="button" id="submitBtn" class="btn btn-primary" onclick="loginUser()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main%}
+
+{% block script %}
+<script>
+    function loginUser(){
+        const userName = $("#userName").val();
+        const userPassword = $("#userPassword").val();
+        const csrf_token = $("[name='csrfmiddlewaretoken']").val();
+
+        $.post("login-user", {
+            "csrfmiddlewaretoken": csrf_token,
+            "userName": userName,
+            "userPassword": userPassword,
+        }, 
+        function(response){
+            alert(response.message);
+            //window.location.href = "";
+        });
+    }
+</script>
+{% endblock script %}

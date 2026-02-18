@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}Doctor Information{% endblock title %}
+
+{% block h1 %}
+    <h1>Doctor Information</h1>
+{% endblock h1 %}
+
+{% block main %}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Hospital</th>
+                    <th>Experience</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.docName}}</td>
+                        <td>{{i.docSpecialization}}</td>
+                        <td>{{i.docHospital}}</td>
+                        <td>{{i.docExperience}}</td>
+                        {% if user.is_authenticated %}
+                            {% if is_Staff or user.is_superuser %}
+                                <td><a class="btn btn-primary" href="{%url 'edit-redirect'%}?id={{i.id}}">Edit</a></td>
+                                <td><a class="btn btn-primary" href="{%url 'delete-doctor'%}?id={{i.id}}">Delete</a></td>
+                            {% else %}
+                                <td><button class="btn btn-primary">Book</button></td>
+                            {% endif %}
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock main %}
+
+
+{% block script %}
+<script>
+   
+    
+</script>
+{% endblock script %}

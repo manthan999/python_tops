@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block h1 %}
+    <h1>Doctor Form</h1>
+{% endblock h1 %}
+
+{% block main %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="card p-4 shadow gap-2">
+                {% csrf_token %}
+                <input type="hidden" id="docId" value="{{docInfo.id}}">
+                <input type="text" id="docName" class="form-control" placeholder="Enter doctor name" value="{{docInfo.docName}}">
+                <input type="text" id="docSpecialization" class="form-control" placeholder="Enter specialization" value="{{docInfo.docSpecialization}}">
+                <input type="text" id="docHospital" class="form-control" placeholder="Enter hospital name" value="{{docInfo.docHospital}}">
+                <input type="number" id="docExperience" class="form-control" placeholder="Years of experience" value="{{docInfo.docExperience}}">
+                <button type="button" id="submit" class="btn btn-primary" onclick="addDoctor()">Submit</button>
+                <button type="button" id="update" class="btn btn-primary" onclick="updateDoctor()">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        const docId = $("#docId").val()
+        if(docId){
+            $("#submit").hide();
+        } else {
+            $("#update").hide();
+        };
+    });
+
+    function addDoctor(){
+        const docName = document.querySelector("#docName").value;
+        const docSpecialization = document.querySelector("#docSpecialization").value;
+        const docHospital = document.querySelector("#docHospital").value;
+        const docExperience = document.querySelector("#docExperience").value;
+        const csrfToken = $("[name='csrfmiddlewaretoken']").val();
+        console.log(docName)
+        $.post("add-doctor", {
+            "csrfmiddlewaretoken": csrfToken,
+            "docName": docName,
+            "docSpecialization": docSpecialization,
+            "docHospital": docHospital,
+            "docExperience": docExperience
+        }, 
+        function (response){
+            alert(response.message)
+            $("#docName").val("");
+            $("#docSpecialization").val("");
+            $("#docHospital").val("");
+            $("#docExperience").val("");
+        });
+    };
+
+    function updateDoctor(){
+        const docId = $("#docId").val();
+        const docName = $("#docName").val();
+        const docSpecialization = $("#docSpecialization").val();
+        const docHospital = $("#docHospital").val();
+        const docExperience = $("#docExperience").val();
+        const csrfToken = $("[name='csrfmiddlewaretoken']").val();
+        $.post("update-doctor", {
+            "csrfmiddlewaretoken": csrfToken,
+            "docId": docId,
+            "docName": docName,
+            "docSpecialization": docSpecialization,
+            "docHospital": docHospital,
+            "docExperience": docExperience
+        }, 
+        function (response){
+            alert(response.message)
+            $("#docName").val("");
+            $("#docSpecialization").val("");
+            $("#docHospital").val("");
+            $("#docExperience").val("");
+        });
+    }
+</script>
+{% endblock script %}
